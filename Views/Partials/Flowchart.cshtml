@@ -1,0 +1,77 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Xml;
+@using System.Xml.Linq;
+@{
+	<link rel="stylesheet" href="/App_Plugins/Flowmaster/BackOffice/styles/FlowchartDisplay.css" />
+    <script src="/App_Plugins/Flowmaster/BackOffice/assets/jquery-2.1.1.min.js"></script>
+    <script src="/App_Plugins/Flowmaster/BackOffice/assets/jquery-ui-1.11.2.min.js"></script>
+    <script src="/App_Plugins/Flowmaster/BackOffice/assets/jquery.jsPlumb-1.7.2.min.js"></script>
+	<script src="/App_Plugins/Flowmaster/BackOffice/scripts/FlowchartDisplay.js"></script>
+    <script src="/App_Plugins/Flowmaster/BackOffice/scripts/init_site.js"></script>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="/Css/remodal.css" />
+    <link rel="stylesheet" href="/Css/Flowchart Site.css" />
+    <link rel="stylesheet" href="/Css/Flowchart Custom.css" />
+    <script src="/scripts/remodal.js"></script>
+    <script src="/scripts/panzoom.js"></script>
+    
+    
+    string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/"; //gets the base of the current URL
+    string xmlFilePath = baseUrl + "App_Plugins/Flowmaster/BackOffice/content/Flowmaster.xml";  //gets the xml file where the info of all nodes created with the Flowmaster are stored
+    var flowchart = Umbraco.Content(CurrentPage.flowchartPicker.ToString());
+    var paramId = flowchart.Id.ToString();
+    
+    XElement root = XElement.Load(xmlFilePath);
+    XElement chartRoot = root.Descendants("Flowchart").FirstOrDefault(d => d.Attribute("id").Value.Equals(paramId)); //selects the element in the XML corresponding to the current flowchart
+    if (chartRoot != null)
+    {
+        if (chartRoot.Element("boxes") != null && chartRoot.Element("connections") != null)
+        {
+            XElement boxes = chartRoot.Element("boxes");
+            string connections = (string)chartRoot.Element("connections");
+            string frameHtml = "";
+                
+            foreach(XElement box in boxes.Descendants("box"))
+            {
+                frameHtml +=
+                "<div class='box-wrap' style='left: " + (string)box.Attribute("left").Value + "px; top: " + (string)box.Attribute("top").Value + "px;'>" +
+                "<div umbracoid='" + (string)box.Attribute("umbracoId").Value + "' id='" + (string)box.Attribute("id").Value + "' class='dragged-doc' style='background-color: " + (string)box.Attribute("colour").Value + ";'>" +
+                "<p>" + (string)box.Attribute("name").Value + "</p>" +
+                "</div></div>";
+            }
+            foreach (XElement decision in boxes.Descendants("decision"))
+            {
+                string type = ((string)decision.Attribute("type").Value == "end" ? "end" : "decision");
+                string subType = ((string)decision.Attribute("type").Value == "end" ? "" : (string)decision.Attribute("type").Value);
+                string textPart = (subType == "with-text" ? "<p>" + (string)decision.Attribute("text").Value + "</p>" : "");
+                frameHtml +=
+                "<div class='box-wrap' style='left: " + (string)decision.Attribute("left").Value + "px; top: " + (string)decision.Attribute("top").Value + "px;'>" +
+                "<div id='" + (string)decision.Attribute("id").Value + "' class='dragged-" + type + " " + subType + "' style='background-color: " + (string)decision.Attribute("colour").Value + ";'>" +
+                textPart +
+                "</div></div>";
+            }
+            <div class="remodal" data-remodal-id="box_content">
+                <div id="box_content"></div>
+            </div>
+			<div id="flowchart_frontend">
+				<div class="control-group umb-control-group" id="flowchart_cont">
+					<input type="hidden" id="FMConnectionsInit" value="@connections" />
+					<div id="initTest" style="display:none;"></div>
+					<span id="paramId" hidden>@paramId</span>
+					<div id="frame">
+						@Html.Raw(frameHtml)
+					</div>
+				</div>
+			</div>
+        }
+        else
+        {
+			<h3 style="text-align:center;position:relative;top:40%;">- Flowchart is empty -</h3>
+        }
+    }
+    else
+    {
+        <h3 style="text-align:center;margin-top:50px;">Page not found</h3>
+    }
+}
