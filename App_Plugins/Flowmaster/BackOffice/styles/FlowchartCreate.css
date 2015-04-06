@@ -1,0 +1,353 @@
+/* Cursors */
+
+#flowchart_backend path, #flowchart_backend a, #flowchart_backend ._jsPlumb_endpoint {
+    cursor: pointer;
+}
+#flowchart_backend [class*='dragged'] {
+    cursor: move;
+}
+a {
+    cursor: pointer;
+}
+
+/* Z-Indexes */
+
+#flowchart_backend ._jsPlumb_connector {
+    z-index: 18;
+}
+#flowchart_backend ._jsPlumb_endpoint {
+    z-index: 19;
+}
+#flowchart_backend ._jsPlumb_overlay, [class*='dragged'] {
+    z-index: 20;
+}
+#flowchart_backend textarea {
+    z-index: 21;
+}
+#flowchart_backend a {
+    z-index: 1000;
+}
+
+/* Sections */
+
+div.umb-panel-header {
+    position: fixed;
+    z-index:200;
+}
+
+div.umb-pane {
+    height: 1000%;
+    width: 1000%;
+    background: whitesmoke url('/images/grid_60_50.png') repeat;
+    margin: 0;
+    padding: 20px;
+    background-position-x: 6px;
+    background-position-y: -1px;
+}
+
+#flowchart_backend #frame {
+    position: relative; 
+    margin-top: 20px; 
+    width: 85%; 
+    min-height: 600px; 
+    float: left;
+    left: 17px;
+}
+
+#flowchart_backend #FMToolbar {
+    bottom: 25px;
+    position: fixed;
+    left: 15px;
+    z-index: 999;
+}
+
+
+/* Heading Section */
+
+h1#chart_title {
+    margin: 0;
+    padding: 15px 0 0 20px;
+    height: 83px;
+    position: fixed;
+    border-bottom: 1px solid transparent;
+    z-index: 200;
+}
+
+#view_archive {
+    color:#2e8aea;
+    font-size:14px;
+    margin-left:20px;
+}
+
+#archive_list {
+    display: none;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: auto;
+    height:auto;
+    position: absolute;
+    font-size: 15px;
+    left: 200px;
+    z-index: 9999;
+    background-color: white;
+    min-width:100px;
+}
+
+.archive_item {
+    display:block;
+    line-height:22px;
+}
+
+#current_version {
+    background-color: #2e8aea;
+    color: white;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+/* Toolbox */
+
+#flowchart_backend #toolbox {
+    width: 100px;
+
+    position: fixed;
+    z-index: 100;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px 0 0 10px;
+    border-right: 1px solid #d9d9d9;
+    box-shadow: 10px 0px 20px -20px rgb(0, 0, 0);
+}
+
+    #flowchart_backend #toolbox p {
+        text-align: center;
+    }
+
+#flowchart_backend [class*='color-box'] {
+    float: left;
+    width: 20px;
+    height: 20px;
+    cursor:pointer;
+    border-radius: 100%;
+    margin: 5px;
+    border: 2px solid black;
+}
+
+#flowchart_backend .color_boxes {
+    margin-left: 16px;
+}
+    
+#flowchart_backend .drag {
+    cursor: copy;
+    border-radius: 2px;
+    border: 2px solid #1d1d1d;
+    margin:15px auto;
+}
+
+#flowchart_backend .doc {
+    width: 45px;
+    height: 30px;
+}
+
+#flowchart_backend .decision.no-text {
+    width: 20px;
+    height: 20px;
+}
+
+#flowchart_backend .decision.with-text {
+    width: 31px;
+    height: 31px;
+}
+
+#flowchart_backend .end {
+    width:38px;
+    height:23px;
+    border-radius:50% !important;
+}
+
+#flowchart_backend .decision, #flowchart_backend .dragged-decision {
+    -ms-transform: rotate(45deg) skew(-12deg, -12deg);
+    -ms-transform-origin: 50% 50%;
+    -webkit-transform: rotate(45deg) skew(-12deg, -12deg);
+    -webkit-transform-origin: 50% 50%;
+    transform: rotate(45deg) skew(-12deg, -12deg);
+    transform-origin: 50% 50%;
+}
+    #flowchart_backend .dragged-decision * {
+        -ms-transform: skew(12deg, 12deg) rotate(-45deg);
+        -ms-transform-origin: 50% 50%;
+        -webkit-transform: skew(12deg, 12deg) rotate(-45deg);
+        -webkit-transform-origin: 50% 50%;
+        transform: skew(12deg, 12deg) rotate(-45deg);
+        transform-origin: 50% 50%;
+    }
+
+/* Misc */
+
+.ui-tooltip {
+    font-size: 12px;
+    padding: 2px 8px;
+}
+
+#flowchart_backend .current_procedure {
+    border: 4px solid #53A93F !important;
+}
+
+#flowchart_backend .dragged-doc:hover, #flowchart_backend .dragged-decision:hover, #flowchart_backend .dragged-end:hover {
+    border: 4px solid #53A93F !important;
+}
+
+#flowchart_backend .decisionLabel {
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+    padding: 7px;
+}
+
+#flowchart_backend .remove {
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+#flowchart_backend .contLink {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    bottom: -11px;
+    border-radius: 50%;
+    background-color: #53a93f;
+    border: solid;
+}
+
+    #flowchart_backend .contLink:hover {
+        background-color: #41952e;
+    }
+
+    #flowchart_backend .contLink:before {
+        text-decoration: none;
+        color: white;
+        position:relative;
+        margin-top: 3px;
+        margin-left: 6px;
+    }
+
+
+/* Flowchart Items */
+
+#flowchart_backend .box-wrap {
+    height: 88px;
+    width: 120px;
+    position: absolute;
+    top: 10px;
+    left: 150px;
+}
+
+#flowchart_backend .dragged-decision, #flowchart_backend .dragged-doc, #flowchart_backend .dragged-end {
+    position: relative;
+    border: 4px solid #1d1d1d;
+    border-radius: 5px;
+    color: #1d1d1d;
+    box-shadow: 2px 2px 19px #666;
+    -o-box-shadow: 2px 2px 19px #666;
+    -webkit-box-shadow: 2px 2px 19px #666;
+    -moz-box-shadow: 2px 2px 19px #666;
+    -webkit-transition: opacity .2s ease-in, box-shadow .2s ease-in;
+    -moz-transition: opacity .2s ease-in, box-shadow .2s ease-in;
+    -o-transition: opacity .2s ease-in, box-shadow .2s ease-in;
+    transition: opacity .2s ease-in, box-shadow .2s ease-in;
+}
+
+    #flowchart_backend .dragged-decision:hover, #flowchart_backend .dragged-doc:hover, #flowchart_backend .dragged-end:hover {
+        box-shadow: 3px 3px 25px #444;
+        -o-box-shadow: 3px 3px 25px #444;
+        -webkit-box-shadow: 3px 3px 25px #444;
+        -moz-box-shadow: 3px 3px 25px #444;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        filter: alpha(opacity=80);
+        -moz-opacity: 0.8;
+        -khtml-opacity: 0.8;
+        opacity: 0.8;
+    }
+
+        #flowchart_backend [class*=dragged]:hover > textarea {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+    
+    #flowchart_backend [class*='dragged'] a:hover {
+        text-decoration: none;
+    }
+
+#flowchart_backend .dragged-end {
+    position:relative;
+    top:3px;
+    height:46px;
+    width:74px;
+    border-radius:50%;
+    border: 4px solid #1d1d1d;
+}
+    #flowchart_backend .dragged-end .remove {
+        top: 5px;
+        right: 12px;
+    }
+
+#flowchart_backend .dragged-doc {
+    padding: 14px 14px 7px 7px;
+    min-height: 71px;
+}
+
+    #flowchart_backend .dragged-doc textarea {
+        overflow: hidden;
+        resize: none;
+        position: relative;
+        width: 85px;
+        background: none;
+        float: left;
+        outline: 0;
+        padding: 3px 3px 8px 3px;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        color: #1d1d1d;
+        border-radius: 3px;
+        -webkit-transition: .2s ease-in;
+        -moz-transition: .2s ease-in;
+        -o-transition: .2s ease-in;
+        transition: .2s ease-in;
+    }
+
+#flowchart_backend .dragged-decision.no-text {
+    height: 56px;
+    width: 56px;
+    top: 8px;
+    left: -2px;
+}
+
+#flowchart_backend .dragged-decision.with-text {
+    height: 86px;
+    width: 86px;
+    top: 3px;
+    left: -17px;
+}
+    #flowchart_backend .dragged-decision.with-text textarea {
+        overflow: hidden;
+        resize: none;
+        position: relative;
+        width: 100px;
+        background: none;
+        height: 56px;
+        left: -17px;
+        top: 7px;
+        outline: 0;
+        padding: 3px;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        color: white;
+        border-radius: 3px;
+        -webkit-transition: .2s ease-in;
+        -moz-transition: .2s ease-in;
+        -o-transition: .2s ease-in;
+        transition: .2s ease-in;
+    }
