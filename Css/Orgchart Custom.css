@@ -1,0 +1,33 @@
+/* Customize Organizational Chart Options Here! */
+/* Styles set here apply to both frontend and backend */
+
+/* ==========================
+   === DEFAULT BOX COLOUR ===
+   ========================== */
+
+#drag-emp, .dragged-emp {
+    background-color: #eeeeef;
+}
+
+/* =============================
+   === COLOUR PICKER COLOURS ===
+   ============================= */
+
+.color-box1 {
+    background-color: #eeeeef;
+}
+.color-box2 {
+    background-color: #53a93f;
+}
+.color-box3 {
+    background-color: #f4811f;
+}
+.color-box4 {
+    background-color: #ff533f;
+}
+.color-box5 {
+    background-color: #8d62c2;
+}
+.color-box6 {
+    background-color: #777777;
+}
