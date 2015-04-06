@@ -9,9 +9,9 @@ This means...
   <li><b>Orgcharts:</b> ...that you will have the ability to add portraits for each employee to your Orgcharts.</li>
 </ol>
 
-Happy drawing!
+Any comments, suggestions, bug reports, etc. are more than welcome!
 
-<p style="margin-left:10px;font-size:0.8em;">
-  <em>For the complete package .zip and pdf documetation, please go to <a href="https://our.umbraco.org/projects/backoffice-extensions/flowmaster">the project page on our.umbraco.org</a>
+Happy drawing! :)
+
+  <em>For the complete package .zip and pdf documetation, please go to <a href="https://our.umbraco.org/projects/backoffice-extensions/flowmaster">the project page on our.umbraco.org</a><br/>
   Image and .dll files are excluded in this repository.</em>
-</p>
