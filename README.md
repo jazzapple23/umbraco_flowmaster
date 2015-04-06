@@ -11,6 +11,7 @@ This means...
 
 Happy drawing!
 
-<em>For the complete package .zip and pdf documetation, please go to <a href="https://our.umbraco.org/projects/backoffice-extensions/flowmaster">the project page on our.umbraco.org</a>
-
-Image and .dll files are excluded in this repository.</em>
+<p style="margin-left:10px;font-size:0.8em;">
+  <em>For the complete package .zip and pdf documetation, please go to <a href="https://our.umbraco.org/projects/backoffice-extensions/flowmaster">the project page on our.umbraco.org</a>
+  Image and .dll files are excluded in this repository.</em>
+</p>
