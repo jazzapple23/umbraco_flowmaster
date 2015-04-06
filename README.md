@@ -15,3 +15,5 @@ Happy drawing! :)
 
   <em>For the complete package .zip and pdf documetation, please go to <a href="https://our.umbraco.org/projects/backoffice-extensions/flowmaster">the project page on our.umbraco.org</a><br/>
   Image and .dll files are excluded in this repository.</em>
+
+Created by: Antonia Jovanovska, Borjan Vasovski and Mihai Boceanu from <a href="http://www.alpineinteractive.co.uk/">Alpine Interactive</a>
