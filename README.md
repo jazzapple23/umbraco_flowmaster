@@ -1,4 +1,4 @@
-Flowmaster for Umbraco
+# Flowmaster for Umbraco
 
 The Flowmaster is an easy-to-use tool, enabling you to create flowcharts and organizational charts in the Umbraco backend to display on your site.
 The special thing about the Flowmaster is that it is integrated with the Content and Media sections in Umbraco.
@@ -9,6 +9,6 @@ This means...
   
 Happy drawing!
 
-For the complete package .zip and pdf documetation, please go to https://our.umbraco.org/projects/backoffice-extensions/flowmaster
+For the complete package .zip and pdf documetation, please go to <a href="https://our.umbraco.org/projects/backoffice-extensions/flowmaster">the project page on our.umbraco.org</a>
 
 Image and .dll files are excluded in this repository.
