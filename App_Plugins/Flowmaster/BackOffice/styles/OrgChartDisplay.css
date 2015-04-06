@@ -1,0 +1,47 @@
+/* Z-Indexes */
+
+#orgchart_frontend ._jsPlumb_connector {
+    z-index: 18;
+}
+#orgchart_frontend ._jsPlumb_endpoint {
+    z-index: 19;
+}
+#orgchart_frontend ._jsPlumb_overlay, .dragged-emp {
+    z-index: 20;
+}
+#orgchart_frontend .dragged-emp p {
+    z-index: 21;
+}
+#orgchart_frontend a {
+    z-index: 22;
+}
+
+/* Main */
+
+#orgchart_frontend #frame {
+    position: relative;
+    height: 100%;
+}
+    #orgchart_frontend #frame * {
+        cursor:move;
+    }
+
+#orgchart_frontend .dragged-emp {
+    position: absolute;
+}
+
+#orgchart_frontend .emp-icon {
+    display:none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-size: contain;
+}
+
+#orgchart_frontend .emp-img {
+    display:none;
+    position: absolute;
+    top: 66px;
+    left:-4px;
+    width:146px;
+}
