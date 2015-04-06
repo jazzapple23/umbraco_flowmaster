@@ -1,0 +1,67 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Xml;
+@using System.Xml.Linq;
+@{
+    <link rel="stylesheet" href="/App_Plugins/Flowmaster/BackOffice/styles/OrgChartDisplay.css" />
+    <script src="/App_Plugins/Flowmaster/BackOffice/assets/jquery-2.1.1.min.js"></script>
+    <script src="/App_Plugins/Flowmaster/BackOffice/assets/jquery-ui-1.11.2.min.js"></script>
+    <script src="/App_Plugins/Flowmaster/BackOffice/assets/jquery.jsPlumb-1.7.2.min.js"></script>
+    <script src="/App_Plugins/Flowmaster/BackOffice/scripts/OrgChartDisplay.js"></script>
+    <script src="/App_Plugins/Flowmaster/BackOffice/scripts/init_site.js"></script>
+    
+    <link rel="stylesheet" href="/Css/Orgchart Site.css" />
+    <link rel="stylesheet" href="/Css/Orgchart Custom.css" />
+    <script src="/scripts/panzoom.js"></script>
+    
+    string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/"; //gets the base of the current url
+    string xmlFilePath = baseUrl + "App_Plugins/Flowmaster/BackOffice/content/Flowmaster.xml";  //gets the xml file where the info of all nodes created with the Flowmaster are stored
+    var orgChart = Umbraco.Content(CurrentPage.orgchartPicker.ToString());
+    var paramId = orgChart.Id.ToString();
+
+    XElement root = XElement.Load(xmlFilePath);
+    XElement chartRoot = root.Descendants("OrgChart").FirstOrDefault(d => d.Attribute("id").Value.Equals(paramId)); //selects the element in the XML coresponding to the current service
+    if (chartRoot != null)
+    {
+        if (chartRoot.Element("boxes") != null && chartRoot.Element("connections") != null)
+        {
+            XElement boxes = chartRoot.Element("boxes"); //Gets the Html of the diagram for the element
+            string connections = (string)chartRoot.Element("connections"); //gets the connections for the element
+            string frameHtml = "";
+
+            foreach (XElement employee in boxes.Descendants("employee"))
+            {
+                frameHtml +=
+                "<div id='" + (string)employee.Attribute("id").Value + "' class='dragged-emp' " +
+                        "style='left: " + (string)employee.Attribute("left").Value + "px; top: " + (string)employee.Attribute("top").Value + "px; " +
+                        "background-color: " + (string)employee.Attribute("colour").Value + "; " +
+                        "height: 50px; width: 130px;' emp-img='" + (string)employee.Attribute("imgUrl").Value + "'>" +
+                    "<p class='pos-p'>" + (string)employee.Attribute("position").Value + "</p>" +
+                    "<p class='name-p'>" + (string)employee.Attribute("name").Value + "</p>" +
+                    "<a class='emp-icon'></a>" +
+                "</div>";
+            }
+                
+            <div id="orgchart_frontend">
+                <div class="control-group umb-control-group" id="flowchart_cont">
+                    <input type="hidden" id="FMConnectionsInit" value="@connections" />
+                    <div id="initTest" style="display:none;"></div>
+					
+                    <section class="flowchart_options">
+                        <a href="#" class="flowchart-close"></a><div class="buttons"><a class="zoom-in"></a><a class="zoom-out"></a><a onclick="" class="reset"></a></div>                    
+                    </section>
+                    <div id="frame">
+                        @Html.Raw(frameHtml)
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <h3 style="text-align:center;margin-top:50px;">- Organizational Chart is empty -</h3>
+        }
+    }
+    else
+    {
+        <h3 style="text-align:center;margin-top:50px;">Page not found</h3>
+    }
+}
