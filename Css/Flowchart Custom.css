@@ -1,0 +1,69 @@
+/* Customize Flowchart Options Here! */
+/* Styles set here apply to both frontend and backend */
+
+/* =============
+   === FONTS ===
+   ============= */
+
+/* IMPORTANT! lines connecting boxes on frontend and backend may be mismatched if nothing is set here, or if these styles are overridden */
+/* Step and Decision */
+.dragged-doc p, .dragged-decision p, .dragged-doc textarea, .dragged-decision textarea, .decisionLabel {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+}
+/* label styles - not critical */
+/* Decision Label (for decisions with no text) */
+.decisionLabel {
+    font-family: Arial;
+    font-size: 14px;
+}
+/* text align - not critical */
+/* Step */
+.dragged-doc p, .dragged-doc textarea {
+    text-align:center;
+}
+/* Decision */
+.dragged-decision p, .dragged-decision textarea {
+    text-align:center;
+}
+
+/* ===========================
+   === DEFAULT BOX COLOURS ===
+   =========================== */
+
+/* Step */
+#drag-doc, .dragged-doc {
+    background-color: #eeeeef;
+}
+/* Decision */
+#drag-decision, .dragged-decision {
+    background-color: #777;
+}
+/* Start/End */
+#drag-end, .dragged-end {
+    background-color: #eeeeef;
+}
+
+/* =============================
+   === COLOUR PICKER COLOURS ===
+   ============================= */
+
+.color-box1 {
+    background-color: #eeeeef;
+}
+.color-box2 {
+    background-color: #777;
+}
+.color-box3 {
+    background-color: #f4811f;
+}
+.color-box4 {
+    background-color: #ff533f;
+}
+.color-box5 {
+    background-color: #8d62c2;
+}
+.color-box6 {
+    background-color: #53a93f;
+}
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
