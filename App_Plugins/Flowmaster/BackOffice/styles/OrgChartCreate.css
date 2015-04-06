@@ -1,0 +1,252 @@
+/* Cursors */
+
+#orgchart_backend path, #orgchart_backend a, #orgchart_backend ._jsPlumb_endpoint {
+    cursor: pointer;
+}
+#orgchart_backend .dragged-emp {
+    cursor: move;
+}
+a {
+    cursor: pointer;
+}
+
+/* Z-Indexes */
+
+#orgchart_backend ._jsPlumb_connector {
+    z-index: 18;
+}
+#orgchart_backend ._jsPlumb_endpoint {
+    z-index: 19;
+}
+#orgchart_backend ._jsPlumb_overlay, .dragged-emp {
+    z-index: 20;
+}
+#orgchart_backend input[type=text] {
+    z-index: 21;
+}
+#orgchart_backend a {
+    z-index: 22;
+}
+
+/* Sections */
+
+div.umb-panel-header {
+    position: fixed;
+    z-index:200;
+}
+
+div.umb-pane {
+    height: 1000%;
+    width: 1000%;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    background-position-x: 6px;
+    background-position-y: -1px;
+}
+
+#orgchart_backend #frame {
+    position: relative; 
+    margin-top: 20px; 
+    width: 85%; 
+    min-height: 600px; 
+    float: left;
+    left: -20px;
+}
+
+#orgchart_backend #FMToolbar {
+    bottom: 25px;
+    position: fixed;
+    left: 15px;
+    z-index: 999;
+}
+
+/* Heading Section */
+
+h1#chart_title {
+    margin: 0;
+    padding: 15px 0 0 20px;
+    height: 83px;
+    position: fixed;
+    border-bottom: 1px solid transparent;
+    z-index: 200;
+}
+
+#view_archive {
+    color:#2e8aea;
+    font-size:14px;
+    margin-left:20px;
+}
+
+#archive_list {
+    display: none;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: auto;
+    height:auto;
+    position: absolute;
+    font-size: 15px;
+    left: 200px;
+    z-index: 9999;
+    background-color: white;
+    min-width:100px;
+}
+
+.archive_item {
+    display:block;
+    line-height:22px;
+}
+
+#current_version {
+    background-color: #2e8aea;
+    color: white;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+/* Toolbox */
+
+#orgchart_backend #toolbox {
+    width: 90px;
+    height: 250px;
+    
+    position: fixed;
+    z-index: 100;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px 0 0 10px;
+    border-right: 1px solid #d9d9d9;
+    box-shadow: 10px 0px 20px -20px rgb(0, 0, 0);
+}
+
+    #orgchart_backend #toolbox p {
+        text-align: center;
+    }
+
+#orgchart_backend [class*=color-box] {
+    float: left;
+    width: 20px;
+    height: 20px;
+    cursor:pointer;
+    border-radius: 100%;
+    margin: 5px;
+    border: 2px solid black;
+}
+
+#orgchart_backend .color_boxes {
+    margin-left: 10px;
+}
+
+#orgchart_backend .drag {
+    margin: 15px auto;
+    height: 25px;
+    width: 50px;
+
+    cursor: copy;
+    border-radius: 2px;
+    border: 2px solid #1d1d1d;
+}
+
+/* Misc */
+
+.ui-tooltip {
+    font-size: 12px;
+    padding: 2px 8px;
+}
+
+#orgchart_backend .current_employee {
+   border-color: #53A93F !important;
+}
+
+#orgchart_backend .dragged-emp:hover {
+    border: 4px solid #53A93F !important;
+}
+
+#orgchart_backend .remove {
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+#orgchart_backend .emp-icon {
+    display:none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    height:17px;
+    width:17px;
+    background-image:url('/images/icon-person.png');
+    background-size: contain;
+}
+
+#orgchart_backend #rem-emp-img {
+    outline:none !important;
+}
+
+/* Chart Items */
+
+#orgchart_backend .dragged-emp {
+    position: absolute;
+    border: 4px solid #1d1d1d;
+    color: #1d1d1d;
+    height: 50px;
+    width: 130px;
+    left:180px;
+    padding: 7px;
+    text-align: center;
+    box-shadow: 2px 2px 19px #666;
+    -o-box-shadow: 2px 2px 19px #666;
+    -webkit-box-shadow: 2px 2px 19px #666;
+    -moz-box-shadow: 2px 2px 19px #666;
+    -webkit-transition: opacity .2s ease-in, box-shadow .2s ease-in;
+    -moz-transition: opacity .2s ease-in, box-shadow .2s ease-in;
+    -o-transition: opacity .2s ease-in, box-shadow .2s ease-in;
+    transition: opacity .2s ease-in, box-shadow .2s ease-in;
+}
+
+    #orgchart_backend .dragged-emp:hover {
+        box-shadow: 3px 3px 25px #444;
+        -o-box-shadow: 3px 3px 25px #444;
+        -webkit-box-shadow: 3px 3px 25px #444;
+        -moz-box-shadow: 3px 3px 25px #444;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        filter: alpha(opacity=80);
+        -moz-opacity: 0.8;
+        -khtml-opacity: 0.8;
+        opacity: 0.8;
+    }
+        #orgchart_backend .dragged-emp:hover > input {
+            background-color: white;
+        }
+
+    #orgchart_backend .dragged-emp a:hover {
+        text-decoration: none;
+    }
+
+    #orgchart_backend .dragged-emp input {
+        position: relative;
+        padding: 0;
+        float: left;
+        width: 115px;
+        margin-bottom: 2px;
+        height: 20px;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        text-align: center;
+        color: #1d1d1d;
+        border-radius: 0;
+        -webkit-transition: .2s ease-in;
+        -moz-transition: .2s ease-in;
+        -o-transition: .2s ease-in;
+        transition: .2s ease-in;
+    }
+        #orgchart_backend .dragged-emp input[name='name'] {
+            font-size: 12px;
+        }
+
+        #orgchart_backend .dragged-emp input[name='position'] {
+            font-size: 14px;
+        }
