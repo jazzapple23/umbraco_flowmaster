@@ -1,0 +1,8 @@
+{
+	javascript: [
+	    '~/App_Plugins/flowmaster/backoffice/FlowmasterTree/flowmaster.flowmasterTree.create.Controller.js',
+		'~/App_Plugins/flowmaster/backoffice/FlowmasterTree/flowmaster.flowmasterTree.edit.Controller.js',
+		'~/App_Plugins/flowmaster/backoffice/FlowmasterTree/flowmaster.flowmasterTree.delete.Controller.js',
+		'~/App_Plugins/flowmaster/backoffice/FlowmasterTree/flowmaster.flowmasterTree.rename.Controller.js'
+		]
+}	
