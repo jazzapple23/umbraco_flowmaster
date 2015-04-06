@@ -1,0 +1,83 @@
+/* Customize Flowchart Site Styles Here! */
+/* Styles set here will be displayed on your site */
+
+/* This is the whole chart container */
+#flowchart_frontend {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#flowchart_frontend #frame {
+    cursor:default;
+}
+
+    #flowchart_frontend #frame a {
+        cursor:pointer;
+    }
+
+#flowchart_frontend .content-link {
+    height: 22px;
+    width: 22px;
+    bottom:-10px;
+    right:-10px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    background-color: #777;
+    border: 2px solid #1d1d1d;
+    font-family: 'Monotype Corsiva';
+    text-align: center;
+      padding: 2px 3px 1px 0;
+}
+
+#flowchart_frontend .dragged-doc, #flowchart_frontend .dragged-decision, #flowchart_frontend .dragged-end {
+    border-radius: 5px;
+    border: 4px solid #1d1d1d;
+    box-shadow: 2px 2px 19px #666;
+    -o-box-shadow: 2px 2px 19px #666;
+    -webkit-box-shadow: 2px 2px 19px #666;
+    -moz-box-shadow: 2px 2px 19px #666;
+}
+
+    #flowchart_frontend [class*='dragged'] p {
+        word-wrap: break-word;
+        padding: 3px;
+        line-height:20px;
+    }
+
+    #flowchart_frontend [class*='dragged'] a:hover {
+        text-decoration: none;
+    }
+
+#flowchart_frontend .dragged-doc {
+    color: #1d1d1d;
+    background-color: #eeeeef;
+}
+
+    #flowchart_frontend .dragged-doc p {
+        color: #1d1d1d;
+        margin:0;
+    }
+
+#flowchart_frontend .dragged-decision.with-text p {
+    color: white;
+    width: 100px;
+    height: 56px;
+    left: -17px;
+    top: 7px;
+}
+
+#flowchart_frontend .decisionLabel {
+    font-size: 0.7em;
+    color: #1d1d1d;
+    padding: 7px;
+    border: 1px solid #1d1d1d;
+    background-color: rgba(255,255,255,0.9);
+    overflow: visible;
+}
+
+#box_content * {
+    color: white;
+    text-align:left;
+}
