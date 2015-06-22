@@ -1,5 +1,7 @@
 # Flowmaster for Umbraco
 
+PLEASE NOTE: This release is 1.0, which is out of date. The current latest release is 1.1, downloadable <a href="https://our.umbraco.org/projects/backoffice-extensions/flowmaster">here</a>. The next release (1.2) will be available on both GitHub and Our Umbraco.
+
 The Flowmaster is an easy-to-use tool, enabling you to create flowcharts and organizational charts in the Umbraco backend to display on your site.
 The special thing about the Flowmaster is that it is integrated with the <strong>Content</strong> and <strong>Media</strong> sections in Umbraco.
 
